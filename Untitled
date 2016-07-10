@@ -1,0 +1,49 @@
+### Intro
+This automatic page generator is the easiest way to create beautiful pages for all of your projects. Author your page content here [using GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/), select a template crafted by a designer, and publish. After your page is generated, you can check out the new `gh-pages` branch locally. If you’re using GitHub Desktop, simply sync your repository and you’ll see the new branch.
+
+
+### Content
+1. Team Building - Activity
+2. Robotics - Intro
+3. Mechanics Fundamentas
+4. Electronics Fundamentals
+5. Maze Solving - Activity
+6. Software Fundamentals
+7. Sensors
+8. Telecommunication
+9. Analog signals
+10. Chain Reaction - Activity
+
+### 0 - Instructions for the instructions
+This automatic page generator is the easiest way to create beautiful pages for all of your projects. Author your page content here [using GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/), select a template crafted by a designer, and publish. After your page is generated, you can check out the new `gh-pages` branch locally. If you’re using GitHub Desktop, simply sync your repository and you’ll see the new branch.
+
+### 1. Team Building - Activity
+Watch the video  https://www.youtube.com/watch?v=1p5sBzMtB3Q
+Team up
+e’ve crafted some handsome templates for you to use. Go ahead and click 'Continue to layouts' to browse through them. You can easily go back to edit your page before publishing. After publishing your page, you can revisit the page generator and switch to another theme. Your Page content will be preserved.
+
+
+- 1 how many people did he test?
+- 2 where did he tested it?
+- 3 where were the best engineers?
+- 4 who had the worst performance?
+- 5 how do kindergarten kids perform?
+- 6 why? where does that leave us a team?
+
+
+### Creating pages manually
+If you prefer to not use the automatic generator, push a branch named `gh-pages` to your repository to create a page manually. In addition to supporting regular HTML content, GitHub Pages support Jekyll, a simple, blog aware static site generator. Jekyll makes it easy to create site-wide headers and footers without having to copy them across every page. It also offers intelligent blog support and other advanced templating features.
+
+2. Robotics - Intro
+3. Mechanics Fundamentas
+* 4. Electronics Fundamentals
+* 5. Maze Solving - Activity
+* 6. Software Fundamentals
+* 7. Sensors
+* 8. Telecommunication
+* 9. Analog signals
+* 10. Chain Reaction - Activity
+
+
+### Authors and Contributors
+You can find Rudi both on twitter and Github as @todocono . Back in 2012, Julian da Silva @miniBloq served as an inspiration for this course. Feel free to open an issue or start a wiki for it and to shoot for a Pull Request if you want to improve the code or the content.
