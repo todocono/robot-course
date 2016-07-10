@@ -33,73 +33,84 @@
 
 <p>This is a short course about robotics, designed to have in about 10 sessions an outcome of team members building robots and experimenting with different setups.</p>
 
+<p>It has been used both in at least four countries in several iterations. It is, of course, far from perfect. But it is something, at least, that tries to give a comprehensive view to beginners about what robots really are and how to create them.</p>
+
+<p>Please help to improve it and it's code by placing an issue on the master branch. You are also welcome to ask for a Pull Request <a href="https://github.com/todocono" class="user-mention">@todocono</a>.</p>
+
 <h3>
 <a id="content" class="anchor" href="#content" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Content</h3>
 
-<ul>
-<li>1. Team Building - Activity</li>
-<li>2. Robotics - Intro</li>
-<li>3. Mechanics Fundamentas</li>
-<li>4. Electronics Fundamentals</li>
-<li>5. Maze Solving - Activity</li>
-<li>6. Software Fundamentals</li>
-<li>7. Sensors</li>
-<li>8. Telecommunication</li>
-<li>9. Analog signals</li>
-<li>10. Chain Reaction - Activity</li>
-</ul>
+<ol>
+<li>Team Building - Activity</li>
+<li>Robotics - Intro</li>
+<li>Mechanics Fundamentals</li>
+<li>Electronics Fundamentals</li>
+<li>Maze Solving - Activity</li>
+<li>Software Fundamentals</li>
+<li>Sensors</li>
+<li>Telecommunication</li>
+<li>Analog signals</li>
+<li>Chain Reaction - Activity</li>
+</ol>
 
 <h3>
-<a id="0---instructions-for-the-instructions" class="anchor" href="#0---instructions-for-the-instructions" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>0 - Instructions for the instructions</h3>
+<a id="0-instructions-for-the-instructions" class="anchor" href="#0-instructions-for-the-instructions" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>0. Instructions for the instructions</h3>
 
-<p>This automatic page generator is the easiest way to create beautiful pages for all of your projects. Author your page content here <a href="https://guides.github.com/features/mastering-markdown/">using GitHub Flavored Markdown</a>, select a template crafted by a designer, and publish. After your page is generated, you can check out the new <code>gh-pages</code> branch locally. If you’re using GitHub Desktop, simply sync your repository and you’ll see the new branch.</p>
+<p>This set of instructions go hand in hand with the set of code examples hosted at <a href="http://github.com/todocono/robot-course">http://github.com/todocono/robot-course</a>.</p>
+
+<p>The mechanical kit can be purchased at <a href="http://multiplo.org">http://multiplo.org</a> and the electronics are based on Arduino UNO &amp; L298N.</p>
+
+<p>It is a good strategy to establish rules about how to use the materials at the beginning. For example, the instructor will only have one rule to ask for the attention of the students. Stating a clear set of expectations always help to focus the group.</p>
 
 <h3>
 <a id="1-team-building---activity" class="anchor" href="#1-team-building---activity" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>1. Team Building - Activity</h3>
 
-<p>Watch the video  <a href="https://www.youtube.com/watch?v=1p5sBzMtB3Q">https://www.youtube.com/watch?v=1p5sBzMtB3Q</a>
-Team up
-e’ve crafted some handsome templates for you to use. Go ahead and click 'Continue to layouts' to browse through them. You can easily go back to edit your page before publishing. After publishing your page, you can revisit the page generator and switch to another theme. Your Page content will be preserved.</p>
+<p>Any activity would do it. Here is a suggestion of one that it is my favorite.</p>
+
+<ol>
+<li><p>Receive instructions.</p></li>
+<li><p>Team up, groups of at least 3 people.</p></li>
+<li><p>Gather the materials. (marshmallow, 20 spaghetti, 1m of tape, 1m of thread)</p></li>
+<li><p>Build for 18 minutes. The tallest tower that stands for 1 minute wins.</p></li>
+<li><p>Watch the video <a href="https://www.youtube.com/watch?v=1p5sBzMtB3Q">https://www.youtube.com/watch?v=1p5sBzMtB3Q</a></p></li>
+<li>
+<p>Answer:</p>
 
 <ul>
-<li>1 - how many people did he test?</li>
-<li>2 - where did he tested it?</li>
-<li>3 - where were the best engineers?</li>
-<li>4 - who had the worst performance?</li>
-<li>5 - how do kindergarten kids perform?</li>
-<li>6 - why? where does that leave us a team?</li>
+<li> how many people did he test?</li>
+<li> where did he tested it?</li>
+<li> where were the best engineers?</li>
+<li> who had the worst performance?</li>
+<li> how do kindergarten kids perform?</li>
+<li> where do these answers leave us a team?</li>
+</ul>
+</li>
+</ol>
+
+<p>Notes:</p>
+
+<ul>
+<li><p>There is a complementary video with graphs of why is this happening.</p></li>
+<li><p>Detailed instructions are hosted <a href="http://marshmallowchallenge.com/instructions">here</a>. You will need them if you are an instructor and this is the first time you run it.</p></li>
 </ul>
 
-<p>There is a complementary <a href="https://www.ted.com/talks/tom_wujec_build_a_tower/transcript?language=en#t-29229"> video  with graphs of why is this happening.</a> </p>
-
-<p>Detailed instructions are hosted here: <a href="http://marshmallowchallenge.com/Instructions.html"> marshmallowchallenge.com/instructions</a>. You will need them if you are an instructor and this is the first time you run it. </p>
-
-<code>
-  //this is a test
-
-  // the setup function runs once when you press reset or power the board
-  void setup() {
-    // initialize digital pin 13 as an output.
-    pinMode(13, OUTPUT);
-  }
-
-  // the loop function runs over and over again forever
-  void loop() {
-    digitalWrite(13, HIGH);   // turn the LED on (HIGH is the voltage level)
-    delay(1000);              // wait for a second
-    digitalWrite(13, LOW);    // turn the LED off by making the voltage LOW
-    delay(1000);              // wait for a second
-  }
-</code>
-
 <h3>
-<a id="creating-pages-manually" class="anchor" href="#creating-pages-manually" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Creating pages manually</h3>
+<a id="2-robotics---intro" class="anchor" href="#2-robotics---intro" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>2. Robotics - Intro</h3>
 
-<p>If you prefer to not use the automatic generator, push a branch named <code>gh-pages</code> to your repository to create a page manually. In addition to supporting regular HTML content, GitHub Pages support Jekyll, a simple, blog aware static site generator. Jekyll makes it easy to create site-wide headers and footers without having to copy them across every page. It also offers intelligent blog support and other advanced templating features.</p>
+<p>Read the related material. Use online resources to answer:</p>
 
 <ul>
-<li>2. Robotics - Intro</li>
-<li>3. Mechanics Fundamentas</li>
+<li> what does "Robot" mean?</li>
+<li> what were the first robots?</li>
+<li> where were the best engineers?</li>
+<li> who had the worst performance?</li>
+<li> how do kindergarten kids perform?</li>
+<li><p>where do these answers leave us a team?</p></li>
+</ul>
+
+<ol>
+<li>Robotics - Intro</li>
+<li>Mechanics Fundamentas</li>
 <li>4. Electronics Fundamentals</li>
 <li>5. Maze Solving - Activity</li>
 <li>6. Software Fundamentals</li>
@@ -107,7 +118,7 @@ e’ve crafted some handsome templates for you to use. Go ahead and click 'Conti
 <li>8. Telecommunication</li>
 <li>9. Analog signals</li>
 <li>10. Chain Reaction - Activity</li>
-</ul>
+</ol>
 
 <h3>
 <a id="authors-and-contributors" class="anchor" href="#authors-and-contributors" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Authors and Contributors</h3>
@@ -116,21 +127,6 @@ e’ve crafted some handsome templates for you to use. Go ahead and click 'Conti
         </section>
 
         <aside id="sidebar">
-          Content
-          <ul>
-          <li>1. Team Building - Activity</li>
-          <li>2. Robotics - Intro</li>
-          <li>3. Mechanics Fundamentas</li>
-          <li>4. Electronics Fundamentals</li>
-          <li>5. Maze Solving - Activity</li>
-          <li>6. Software Fundamentals</li>
-          <li>7. Sensors</li>
-          <li>8. Telecommunication</li>
-          <li>9. Analog signals</li>
-          <li>10. Chain Reaction - Activity</li>
-          </ul>
-
-
           <a href="https://github.com/todocono/robot-course/zipball/master" class="button">
             <small>Download</small>
             .zip file
@@ -147,6 +143,6 @@ e’ve crafted some handsome templates for you to use. Go ahead and click 'Conti
       </div>
     </div>
 
-
+  
   </body>
 </html>
