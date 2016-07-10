@@ -28,56 +28,116 @@
     <div id="content-wrapper">
       <div class="inner clearfix">
         <section id="main-content">
-          <h3>
-<a id="intro" class="anchor" href="#intro" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Intro</h3>
+          <h2>
+<a id="intro" class="anchor" href="#intro" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Intro</h2>
 
 <p>This is a short course about robotics, designed to have in about 10 sessions an outcome of team members building robots and experimenting with different setups.</p>
 
-<h3>
-<a id="content" class="anchor" href="#content" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Content</h3>
+<p>It has been used both in at least four countries in several iterations. It is, of course, far from perfect. But it is something, at least, that tries to give a comprehensive view to beginners about what robots really are and how to create them.</p>
+
+<p>Please help to improve it and it's code by placing an issue on the master branch. You are also welcome to ask for a Pull Request <a href="https://github.com/todocono" class="user-mention">@todocono</a>.</p>
+
+<h2>
+<a id="content" class="anchor" href="#content" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Content</h2>
+
+<ol>
+<li>Team Building - Activity</li>
+<li>Robotics - Intro</li>
+<li>Mechanics Basics</li>
+<li>Electronics Basics</li>
+<li>Maze Solving - Activity</li>
+<li>Software Basics</li>
+<li>Sensors</li>
+<li>Telecommunication</li>
+<li>Analog signals</li>
+<li>Chain Reaction - Activity</li>
+<li>Learning Outcomes</li>
+<li>Authors &amp; Contributors</li>
+</ol>
+
+<h2>
+<a id="0-instructions-for-the-instructions" class="anchor" href="#0-instructions-for-the-instructions" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>0. Instructions for the instructions</h2>
+
+<p>This set of instructions go hand in hand with the set of code examples hosted at <a href="http://github.com/todocono/robot-course">http://github.com/todocono/robot-course</a>.</p>
+
+<p>The mechanical kit can be purchased at <a href="http://multiplo.org">http://multiplo.org</a> and the electronics are based on Arduino UNO &amp; L298N.</p>
+
+<p>It is a good strategy to establish rules about how to use the materials at the beginning. For example, the instructor will only have one rule to ask for the attention of the students. Stating a clear set of expectations always help to focus the group.</p>
+
+<h2>
+<a id="1-team-building---activity" class="anchor" href="#1-team-building---activity" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>1. Team Building - Activity</h2>
+
+<p>Any activity would do it. Here is a suggestion of one that it is my favorite.</p>
+
+<pre><code>  1. Receive instructions.
+
+  2. Team up, groups of at least 3 people.
+
+  3. Gather the materials. (marshmallow, 20 spaghetti, 1m of tape, 1m of thread)
+
+  4. Build for 18 minutes. The tallest tower that stands for 1 minute wins.
+
+  5. Watch the video https://www.youtube.com/watch?v=1p5sBzMtB3Q
+
+  6. Answer:
+    -  how many people did he test?
+    -  where did he test it?
+    -  where were the best engineers?
+    -  who had the worst performance?
+    -  how did kindergarten kids perform?
+    -  where do these answers leave us a team?
+</code></pre>
+
+<p>Notes:</p>
 
 <ul>
-<li>1. Team Building - Activity</li>
-<li>2. Robotics - Intro</li>
-<li>3. Mechanics Fundamentas</li>
-<li>4. Electronics Fundamentals</li>
-<li>5. Maze Solving - Activity</li>
-<li>6. Software Fundamentals</li>
-<li>7. Sensors</li>
-<li>8. Telecommunication</li>
-<li>9. Analog signals</li>
-<li>10. Chain Reaction - Activity</li>
+<li><p>There is a video that complements with graphs of why is this happening: <a href="https://www.youtube.com/watch?v=vi9CILGF2YQ">https://www.youtube.com/watch?v=vi9CILGF2YQ</a></p></li>
+<li><p>Detailed instructions are hosted <a href="http://marshmallowchallenge.com/instructions">here</a>. You will need them if you are an instructor and this is the first time you run it.</p></li>
+</ul>
+
+<h2>
+<a id="2-robotics" class="anchor" href="#2-robotics" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>2. Robotics</h2>
+
+<h3>
+<a id="21-introduction" class="anchor" href="#21-introduction" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>2.1 Introduction</h3>
+
+<p>Read the provided material. Use online resources to answer:</p>
+
+<ul>
+<li> what does "Robot" mean?</li>
+<li> what were the first robots?</li>
+<li> what different kind of robots are available?</li>
+<li> which parts does a robot have?</li>
 </ul>
 
 <h3>
-<a id="0---instructions-for-the-instructions" class="anchor" href="#0---instructions-for-the-instructions" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>0 - Instructions for the instructions</h3>
+<a id="22-microcontrollers---firmware" class="anchor" href="#22-microcontrollers---firmware" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>2.2 Microcontrollers - Firmware</h3>
 
-<p>This automatic page generator is the easiest way to create beautiful pages for all of your projects. Author your page content here <a href="https://guides.github.com/features/mastering-markdown/">using GitHub Flavored Markdown</a>, select a template crafted by a designer, and publish. After your page is generated, you can check out the new <code>gh-pages</code> branch locally. If you’re using GitHub Desktop, simply sync your repository and you’ll see the new branch.</p>
+<p>Connect the USB cable. Use the <a href="http://arduino.cc">Arduino Software</a>. Select the port and the board type under Tools menu.</p>
+
+<p>Note: in case you are using W###340 chipset, use the following <a href="http://kig.re/2014/12/31/how-to-use-arduino-nano-mini-pro-with-CH340G-on-mac-osx-yosemite.html">link for the drivers</a></p>
 
 <h3>
-<a id="1-team-building---activity" class="anchor" href="#1-team-building---activity" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>1. Team Building - Activity</h3>
+<a id="23-microcontrollers---digital-outputs" class="anchor" href="#23-microcontrollers---digital-outputs" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>2.3 Microcontrollers - Digital Outputs</h3>
 
-<p>Watch the video  <a href="https://www.youtube.com/watch?v=1p5sBzMtB3Q">https://www.youtube.com/watch?v=1p5sBzMtB3Q</a>
-Team up
-e’ve crafted some handsome templates for you to use. Go ahead and click 'Continue to layouts' to browse through them. You can easily go back to edit your page before publishing. After publishing your page, you can revisit the page generator and switch to another theme. Your Page content will be preserved.</p>
+<p>Use the code example <a href="https://www.arduino.cc/en/Tutorial/Blink">Blink</a>. Press the Upload button. Change the 1000 number into other numbers and answer:</p>
 
 
 <img src="images/spaguetti.jpeg" style="max-width: 100%; height: auto;" alt="Team building activity"><br>
 
 
 <ul>
-<li>1 - how many people did he test?</li>
-<li>2 - where did he tested it?</li>
-<li>3 - where were the best engineers?</li>
-<li>4 - who had the worst performance?</li>
-<li>5 - how do kindergarten kids perform?</li>
-<li>6 - why? where does that leave us a team?</li>
+<li> what is 1000?</li>
+<li> how fast our eyes can see?</li>
+<li> how fast can a microcontroller update an output?</li>
 </ul>
 
-<p>There is a complementary <a href="https://www.ted.com/talks/tom_wujec_build_a_tower/transcript?language=en#t-29229"> video  with graphs of why is this happening.</a> </p>
+<h3>
+<a id="24-microcontrollers---breadboard--buzzer" class="anchor" href="#24-microcontrollers---breadboard--buzzer" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>2.4 Microcontrollers - Breadboard &amp; buzzer</h3>
 
-<p>Detailed instructions are hosted here: <a href="http://marshmallowchallenge.com/Instructions.html"> marshmallowchallenge.com/instructions</a>. You will need them if you are an instructor and this is the first time you run it. </p>
+<p>Use the code example <a href="https://www.arduino.cc/en/Tutorial/ToneMelody">Tones</a>. Connect the arduino output to the pin 8 to the buzzer. Buzzer to GND:</p>
 
+<<<<<<< HEAD
 <h3>
 <a id="2-robot" class="anchor" href="#robot-link"></span></a>2. Robotics - Intro</h3>
 
@@ -131,29 +191,301 @@ machine that could do something better than the best of us.</span></p>
 </code>
 
 
+=======
+<ul>
+<li> does the buzzer work in any way we connect it?</li>
+<li> what does GND stand for?</li>
+<li> how are the lines of the breadboard connected?</li>
+</ul>
+
+<p><img src="https://cloud.githubusercontent.com/assets/981310/16712931/30da32e8-46c9-11e6-9fc9-28f0140eec92.png" alt="image"></p>
+
+<h2>
+<a id="3-mechanics-basics" class="anchor" href="#3-mechanics-basics" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>3. Mechanics Basics</h2>
 
 <h3>
-<a id="authors-and-contributors" class="anchor" href="#authors-and-contributors" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Authors and Contributors</h3>
+<a id="31-introduction" class="anchor" href="#31-introduction" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>3.1 Introduction</h3>
 
-<p>You can find Rudi both on twitter and Github as <a href="https://github.com/todocono" class="user-mention">@todocono</a> . Back in 2012, Julian da Silva <a href="https://github.com/miniBloq" class="user-mention">@miniBloq</a> served as an inspiration for this course. Feel free to open an issue or start a wiki for it and to shoot for a Pull Request if you want to improve the code or the content.</p>
+<p>Read the provided material. Use online resources to answer:</p>
+
+<ul>
+<li> what does a "stable structure" mean?</li>
+<li> what is "the Center of Mass" or "Center of Gravity"?</li>
+<li> what is a differential robot?</li>
+</ul>
+>>>>>>> 24f4464b5a36b9dd770820d9b091d743a6795d8a
+
+<h3>
+<a id="32-iteration-by-prototyping-and-testing" class="anchor" href="#32-iteration-by-prototyping-and-testing" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>3.2 Iteration by prototyping and testing</h3>
+
+<ul>
+<li>BigDog: <a href="https://www.youtube.com/watch?v=cNZPRsrwumQ">video</a>
+</li>
+<li>Spot: <a href="https://www.youtube.com/watch?v=M8YjvHYbZ9w">video</a>
+</li>
+<li>Spotmini: <a href="https://www.youtube.com/watch?v=tf7IEVTDjng">video</a>
+</li>
+</ul>
+
+<h3>
+<a id="33-assembly" class="anchor" href="#33-assembly" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>3.3 Assembly</h3>
+
+<p>Use the instructions to create the first basic structure. Build on top of that your unique model.</p>
+
+<p>Make sure that, USB motor cables and power can be connected easily. Make the breadboard and the Arduino pins accessible.</p>
+
+<h2>
+<a id="4-electronics-basics" class="anchor" href="#4-electronics-basics" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>4. Electronics Basics</h2>
+
+<h3>
+<a id="411-introduction" class="anchor" href="#411-introduction" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>4.1.1 Introduction</h3>
+
+<p>Identify the following:</p>
+
+<ul>
+<li> microcontroller</li>
+<li> USB chip</li>
+<li> motor driver</li>
+<li> motors</li>
+<li> batteries</li>
+</ul>
+
+<h3>
+<a id="412-driving-motors" class="anchor" href="#412-driving-motors" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>4.1.2 Driving motors</h3>
+
+<p><img src="https://cloud.githubusercontent.com/assets/981310/16714428/47c0c568-46f5-11e6-9bb5-4953842f1826.png" alt="image"></p>
+
+<h3>
+<a id="42-motor-driver-l298n--batteries" class="anchor" href="#42-motor-driver-l298n--batteries" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>4.2 Motor driver L298N &amp; batteries</h3>
+
+<p>Without disconnecting the buzzer, we will connect the motor driver and the batteries.</p>
+
+<p><img src="https://cloud.githubusercontent.com/assets/981310/16712935/767d7aa8-46c9-11e6-98f1-a6fee6d2bb37.png" alt="image"></p>
+
+<p>Note1: detailed datasheet of the L298N motor driver is <a href="https://www.sparkfun.com/datasheets/Robotics/L298_H_Bridge.pdf">here</a></p>
+
+<p>Note2: if the battery polarity is reversed, both the driver and the Arduino will become useless. It is recommended for the instructor to check one by one before switiching ON.</p>
+
+<h3>
+<a id="42-code-example-with-digitalwrite" class="anchor" href="#42-code-example-with-digitalwrite" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>4.2 Code example with digitalWrite</h3>
+
+<p>Example:</p>
+
+<div class="highlight highlight-source-c++"><pre><span class="pl-k">int</span> speedPin_M1 = <span class="pl-c1">9</span>;     <span class="pl-c">//M1 Speed Control</span>
+<span class="pl-k">int</span> speedPin_M2 = <span class="pl-c1">3</span>;     <span class="pl-c">//M2 Speed Control</span>
+<span class="pl-k">int</span> directionPin_M1A = <span class="pl-c1">6</span>;     <span class="pl-c">//M1 Direction Control</span>
+<span class="pl-k">int</span> directionPin_M1B = <span class="pl-c1">7</span>;     <span class="pl-c">//M1 Direction Control</span>
+<span class="pl-k">int</span> directionPin_M1 = <span class="pl-c1">4</span>;     <span class="pl-c">//M1 Direction Control</span>
+<span class="pl-k">int</span> directionPin_M2 = <span class="pl-c1">5</span>;     <span class="pl-c">//M1 Direction Control</span>
+
+<span class="pl-k">void</span> <span class="pl-en">setup</span>() {                               <span class="pl-c">// Serial initialization</span>
+ <span class="pl-c1">pinMode</span>(directionPin_M1A, OUTPUT);
+ <span class="pl-c1">pinMode</span>(directionPin_M1B, OUTPUT);
+ <span class="pl-c1">pinMode</span>(directionPin_M2A, OUTPUT);
+ <span class="pl-c1">pinMode</span>(directionPin_M2B, OUTPUT);
+ <span class="pl-c1">pinMode</span>(directionPin_ENA, OUTPUT);
+ <span class="pl-c1">pinMode</span>(directionPin_ENA, OUTPUT);
+ <span class="pl-c1">digitalWrite</span> (speedPin_M2, HIGH);             <span class="pl-c">//no PWM Speed Control yet</span>
+ <span class="pl-c1">digitalWrite</span>(directionPin_M1A, LOW);
+ <span class="pl-c1">digitalWrite</span>(directionPin_M1B, HIGH);
+ <span class="pl-c1">digitalWrite</span> (speedPin_M1, HIGH);             <span class="pl-c">//no PWM Speed Control yet</span>
+ <span class="pl-c1">digitalWrite</span>(directionPin_M2A, LOW);
+ <span class="pl-c1">digitalWrite</span>(directionPin_M2B, HIGH);  
+ <span class="pl-c1">delay</span>(<span class="pl-c1">1000</span>);                                  <span class="pl-c">//WAITS FOR 1 SECOND</span>
+ <span class="pl-c1">digitalWrite</span> (speedPin_M1, LOW);              <span class="pl-c">//stops the motors</span>
+ <span class="pl-c1">digitalWrite</span> (speedPin_M2, LOW);              <span class="pl-c">//</span>
+ <span class="pl-c1">delay</span>(<span class="pl-c1">1000</span>);                                  <span class="pl-c">//WAITS FOR 1 SECOND</span>
+ <span class="pl-c1">digitalWrite</span> (speedPin_M2, HIGH);             <span class="pl-c">//no PWM Speed Control yet</span>
+ <span class="pl-c1">digitalWrite</span>(directionPin_M1A, HIGH);
+ <span class="pl-c1">digitalWrite</span>(directionPin_M1B, LOW);  
+ <span class="pl-c1">digitalWrite</span> (speedPin_M1, HIGH);             <span class="pl-c">//no PWM Speed Control yet</span>
+ <span class="pl-c1">digitalWrite</span>(directionPin_M2A, HIGH);
+ <span class="pl-c1">digitalWrite</span>(directionPin_M2B, LOW);
+ <span class="pl-c1">delay</span>(<span class="pl-c1">2000</span>);                                  <span class="pl-c">//WAITS FOR 2 SECONDS</span>
+}
+
+<span class="pl-k">void</span> <span class="pl-en">loop</span>() {
+  <span class="pl-c">//do nothing</span>
+}</pre></div>
+
+<h3>
+<a id="43-pulse-width-modulation" class="anchor" href="#43-pulse-width-modulation" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>4.3 Pulse Width Modulation</h3>
+
+<p>Read the materials provided and answer:</p>
+
+<ul>
+<li>What is the difference between a digital and an analog signal?</li>
+<li>Which pins can give a P.W.M. output ?</li>
+<li>How does the A.D.C. module work?</li>
+<li>How many bits is the maximum output?</li>
+</ul>
+
+<p><img src="https://cloud.githubusercontent.com/assets/981310/16713699/74f16398-46e2-11e6-9d79-b35ab8189bac.png" alt="image"></p>
+
+<h3>
+<a id="44-speed-control-with-analogwrite" class="anchor" href="#44-speed-control-with-analogwrite" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>4.4 Speed control with analogWrite</h3>
+
+<p>Read the reference of <a href="https://www.arduino.cc/en/Reference/AnalogWrite">AnalogWrite</a></p>
+
+<p>Use this new information to transform your software into a speed controlled one. Make the robot go in a circle.</p>
+
+<h2>
+<a id="5-maze-solving---activity" class="anchor" href="#5-maze-solving---activity" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>5. Maze Solving - Activity</h2>
+
+<h3>
+<a id="51-rules-setting" class="anchor" href="#51-rules-setting" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>5.1 Rules setting</h3>
+
+<p>Each team will have a starting point and they need to navigate through fixed obstacles.</p>
+
+<h3>
+<a id="52-activity-objectives" class="anchor" href="#52-activity-objectives" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>5.2 Activity Objectives</h3>
+
+<p>All participants will practice sequential programming, becoming more familiar with the challenges of connecting their planned software with the real limitations when testing it.</p>
+
+<h2>
+<a id="6-software-basics-i" class="anchor" href="#6-software-basics-i" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>6. Software Basics I</h2>
+
+<h3>
+<a id="61-intro" class="anchor" href="#61-intro" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>6.1 Intro</h3>
+
+<p>Watch the following video. Darpa challenge 2015: <a href="https://www.youtube.com/watch?v=8P9geWwi9e0">video</a></p>
+
+<p>Debate:</p>
+
+<ul>
+<li>which is the most difficult task?</li>
+<li>what do the algorithms need to consider?</li>
+<li>Why is called the "Darpa Challenge"?</li>
+</ul>
+
+<h3>
+<a id="62-control-structures-while--for" class="anchor" href="#62-control-structures-while--for" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>6.2 Control Structures: while &amp; for</h3>
+
+<p>Use the following information:
+<a href="https://www.arduino.cc/en/Reference/For">https://www.arduino.cc/en/Reference/For</a>
+<a href="https://www.arduino.cc/en/Reference/while">https://www.arduino.cc/en/Reference/while</a></p>
+
+<p>Build a software that plays a melody at each corner of a square.</p>
+
+<h3>
+<a id="63-communication" class="anchor" href="#63-communication" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>6.3 Communication</h3>
+
+<p>Use the following information:
+<a href="https://www.arduino.cc/en/Reference/For">https://www.arduino.cc/en/Reference/For</a>
+<a href="https://www.arduino.cc/en/Reference/while">https://www.arduino.cc/en/Reference/while</a></p>
+
+<p>Build a software that plays a melody at each corner of a square.</p>
+
+<h3>
+<a id="64-control-structures-variables" class="anchor" href="#64-control-structures-variables" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>6.4 Control Structures: variables</h3>
+
+<p>Use the following information:
+<a href="https://www.arduino.cc/en/Reference/For">https://www.arduino.cc/en/Reference/For</a>
+<a href="https://www.arduino.cc/en/Reference/while">https://www.arduino.cc/en/Reference/while</a></p>
+
+<p>Build a software that plays a melody at each corner of a square.</p>
+
+<h2>
+<a id="7-sensors" class="anchor" href="#7-sensors" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>7. Sensors</h2>
+
+<h3>
+<a id="71-analog-sensors-light-detection" class="anchor" href="#71-analog-sensors-light-detection" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>7.1 Analog Sensors: Light Detection</h3>
+
+<p>Use this circuit:
+<img src="https://cloud.githubusercontent.com/assets/981310/16713846/08642324-46e6-11e6-94fb-d65f544d99f6.png" alt="image"></p>
+
+<p>With this software:
+<a href="https://www.arduino.cc/en/Tutorial/AnalogInput">https://www.arduino.cc/en/Tutorial/AnalogInput</a></p>
+
+<p>Your goal is to create a light sensing software.</p>
+
+<h3>
+<a id="721-digital-sensors-ultrasound---hardware" class="anchor" href="#721-digital-sensors-ultrasound---hardware" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>7.2.1 Digital Sensors: Ultrasound - Hardware</h3>
+
+<p>As an example of a digital sensor, we have the ultrasonic module HC-SR04
+<a href="http://www.robotshop.com/media/files/PDF/datasheet-sen026.pdf">datasheet</a></p>
+
+<p>Use the following diagram to wire it to your board:
+<img src="https://cloud.githubusercontent.com/assets/981310/16713761/ed20dc4e-46e3-11e6-8337-91260704a771.png" alt="image"></p>
+
+<h3>
+<a id="722-digital-sensors-ultrasound---software" class="anchor" href="#722-digital-sensors-ultrasound---software" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>7.2.2 Digital Sensors: Ultrasound - Software</h3>
+
+<p>Given the following function, read the value in centimeters. :</p>
+
+<div class="highlight highlight-source-c++"><pre><span class="pl-k">int</span> <span class="pl-en">ultraSound</span>( <span class="pl-k">void</span> ) {
+  <span class="pl-k">long</span> duration;
+  <span class="pl-c1">digitalWrite</span>(trigPin, LOW);  <span class="pl-c">// Added this line</span>
+  <span class="pl-c1">delayMicroseconds</span>(<span class="pl-c1">2</span>); <span class="pl-c">// Added this line</span>
+  <span class="pl-c1">digitalWrite</span>(trigPin, HIGH);
+  <span class="pl-c1">delayMicroseconds</span>(<span class="pl-c1">10</span>); <span class="pl-c">// Added this line</span>
+  <span class="pl-c1">digitalWrite</span>(trigPin, LOW);
+  duration = <span class="pl-c1">pulseIn</span>(echoPin, HIGH);
+  <span class="pl-k">long</span> distance = (duration / <span class="pl-c1">2</span>) / <span class="pl-c1">29.1</span>;
+  <span class="pl-k">return</span> (<span class="pl-k">int</span>)distance;
+}</pre></div>
+
+<h2>
+<a id="8-software-basics-ii" class="anchor" href="#8-software-basics-ii" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>8. Software Basics II</h2>
+
+<h3>
+<a id="63-control-structures-if" class="anchor" href="#63-control-structures-if" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>6.3 Control Structures: if</h3>
+
+<h3>
+<a id="63-control-structures-switch-case" class="anchor" href="#63-control-structures-switch-case" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>6.3 Control Structures: Switch case</h3>
+
+<h3>
+<a id="82-wifi" class="anchor" href="#82-wifi" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>8.2 Wifi</h3>
+
+<h3>
+<a id="83-infrared-signals" class="anchor" href="#83-infrared-signals" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>8.3 Infrared signals</h3>
+
+<p><img src="https://cloud.githubusercontent.com/assets/981310/16713730/5fa7f4ba-46e3-11e6-866e-ad6c14f96c6d.png" alt="image"></p>
+
+<h2>
+<a id="9-analog-signals" class="anchor" href="#9-analog-signals" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>9. Analog signals</h2>
+
+<h2>
+<a id="10-chain-reaction---activity" class="anchor" href="#10-chain-reaction---activity" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>10. Chain Reaction - Activity</h2>
+
+<h3>
+<a id="101-rules-setting" class="anchor" href="#101-rules-setting" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>10.1 Rules setting</h3>
+
+<p>Each robot/machine will receive one input. Each one should have the ability to have one physical movement as an output. All machines should be connected together. No movement can last less than two seconds. No robot can directly touch other robot.</p>
+
+<h3>
+<a id="102-activity-objectives" class="anchor" href="#102-activity-objectives" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>10.2 Activity Objectives</h3>
+
+<p>Through this physical challenge, all knowledge is applied by the participants. The collaboration between the teams and the curiosity of how</p>
+
+<h2>
+<a id="11-what-we-can-learn-from-making-a-robot-" class="anchor" href="#11-what-we-can-learn-from-making-a-robot-" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>11. What we can learn from "making" a robot ...</h2>
+
+<p>The expected learning outcomes can be stated as some of the following. What we have to add on top of those is that the technological fluency achieved has no limits.</p>
+
+<ul>
+<li>Understand fundamentals of computer programming and interactivity</li>
+<li>Apply and implement coding techniques to solve problems</li>
+<li>Integrate and associate the techniques used both in software and hardware development</li>
+<li>Build a mechanical structure and do the electrical connections to make it fully autonomous.</li>
+<li>Program a microcontroller by writing programs that display messages, remember values, make computations with math operators, and interact with external circuits.</li>
+<li>Build and adjust an autonomous control system that monitors sensor input and responds with motion output.</li>
+<li>Identify and apply additional STEM concepts including physics (the light spectrum, frequency, sound, motion) and engineering skills (mechanics, troubleshooting, problem­solving, subsystem testing, and setpoints).</li>
+</ul>
+
+<h2>
+<a id="12-authors-and-contributors" class="anchor" href="#12-authors-and-contributors" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>12 Authors and Contributors</h2>
+
+<p>You can find the author, Rudi both on wechat, twitter and Github as <a href="https://github.com/todocono" class="user-mention">@todocono</a> .Feel free to open an issue or start a wiki for it and to shoot for a Pull Request if you want to improve the code or the content.</p>
+
+<p>Back in 2012, Julian da Silva <a href="https://github.com/miniBloq" class="user-mention">@miniBloq</a> and Monica Paves @monicapaves served as an inspiration for this course.</p>
+
+<p>Additional resources were used from numerous graphics and examples, specially from Arduino website:
+<a href="https://www.arduino.cc/en/Tutorial/BuiltInExamples">https://www.arduino.cc/en/Tutorial/BuiltInExamples</a>
+<a href="https://www.arduino.cc/en/Reference/HomePage">https://www.arduino.cc/en/Reference/HomePage</a></p>
         </section>
 
         <aside id="sidebar">
-          Content
-          <ul>
-          <li>1. Team Building - Activity</li>
-          <li>2. Robotics - Intro</li>
-          <li>3. Mechanics Fundamentas</li>
-          <li>4. Electronics Fundamentals</li>
-          <li>5. Maze Solving - Activity</li>
-          <li>6. Software Fundamentals</li>
-          <li>7. Sensors</li>
-          <li>8. Telecommunication</li>
-          <li>9. Analog signals</li>
-          <li>10. Chain Reaction - Activity</li>
-          </ul>
-
-
           <a href="https://github.com/todocono/robot-course/zipball/master" class="button">
             <small>Download</small>
             .zip file
@@ -170,6 +502,6 @@ machine that could do something better than the best of us.</span></p>
       </div>
     </div>
 
-
+  
   </body>
 </html>
