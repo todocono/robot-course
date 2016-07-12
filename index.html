@@ -211,8 +211,8 @@
 
 <p>Example:</p>
 
-<div class="highlight highlight-source-c++"><pre><span class="pl-k">int</span> speedPin_M1 = <span class="pl-c1">9</span>;     <span class="pl-c">//M1 Speed Control</span>
-<span class="pl-k">int</span> speedPin_M2 = <span class="pl-c1">3</span>;     <span class="pl-c">//M2 Speed Control</span>
+<div class="highlight highlight-source-c++"><pre><span class="pl-k">int</span> EN_M1 = <span class="pl-c1">9</span>;     <span class="pl-c">//M1 Speed Control</span>
+<span class="pl-k">int</span> EN_M2 = <span class="pl-c1">3</span>;     <span class="pl-c">//M2 Speed Control</span>
 <span class="pl-k">int</span> directionPin_M1A = <span class="pl-c1">6</span>;     <span class="pl-c">//M1 Direction Control</span>
 <span class="pl-k">int</span> directionPin_M1B = <span class="pl-c1">7</span>;     <span class="pl-c">//M1 Direction Control</span>
 <span class="pl-k">int</span> directionPin_M2A = <span class="pl-c1">4</span>;     <span class="pl-c">//M1 Direction Control</span>
@@ -223,7 +223,8 @@
  <span class="pl-c1">pinMode</span>(directionPin_M1B, OUTPUT);
  <span class="pl-c1">pinMode</span>(directionPin_M2A, OUTPUT);
  <span class="pl-c1">pinMode</span>(directionPin_M2B, OUTPUT);
- <span class="pl-c1">pinMode</span>(speedPin_M1, OUTPUT);
+ <span class="pl-c1">pinMode</span>(EN_M1, OUTPUT);
+<span class="pl-c1">pinMode</span>(EN_M2, OUTPUT);
 
  <span class="pl-c1">digitalWrite</span> (speedPin_M2, HIGH);             <span class="pl-c">//no PWM Speed Control yet</span>
  <span class="pl-c1">digitalWrite</span>(directionPin_M1A, LOW);
@@ -246,7 +247,7 @@
 
 <span class="pl-k">void</span> <span class="pl-en">loop</span>() {
   <span class="pl-c">//do nothing=</span>
-}``````
+}```
 
 
 ### <span class="pl-c1">4.3</span> Pulse Width Modulation
