@@ -226,20 +226,20 @@
  <span class="pl-c1">pinMode</span>(EN_M1, OUTPUT);
 <span class="pl-c1">pinMode</span>(EN_M2, OUTPUT);
 
- <span class="pl-c1">digitalWrite</span> (speedPin_M2, HIGH);             <span class="pl-c">//no PWM Speed Control yet</span>
+ <span class="pl-c1">digitalWrite</span> (EN_M2, HIGH);             <span class="pl-c">//no PWM Speed Control yet</span>
  <span class="pl-c1">digitalWrite</span>(directionPin_M1A, LOW);
  <span class="pl-c1">digitalWrite</span>(directionPin_M1B, HIGH);
- <span class="pl-c1">digitalWrite</span> (speedPin_M1, HIGH);             <span class="pl-c">//no PWM Speed Control yet</span>
+ <span class="pl-c1">digitalWrite</span> (EN_M1, HIGH);             <span class="pl-c">//no PWM Speed Control yet</span>
  <span class="pl-c1">digitalWrite</span>(directionPin_M2A, LOW);
  <span class="pl-c1">digitalWrite</span>(directionPin_M2B, HIGH);  
  <span class="pl-c1">delay</span>(<span class="pl-c1">1000</span>);                                  <span class="pl-c">//WAITS FOR 1 SECOND</span>
- <span class="pl-c1">digitalWrite</span> (speedPin_M1, LOW);              <span class="pl-c">//stops the motors</span>
- <span class="pl-c1">digitalWrite</span> (speedPin_M2, LOW);              <span class="pl-c">//</span>
+ <span class="pl-c1">digitalWrite</span> (EN_M1, LOW);              <span class="pl-c">//stops the motors</span>
+ <span class="pl-c1">digitalWrite</span> (EN_M2, LOW);              <span class="pl-c">//</span>
  <span class="pl-c1">delay</span>(<span class="pl-c1">1000</span>);                                  <span class="pl-c">//WAITS FOR 1 SECOND</span>
- <span class="pl-c1">digitalWrite</span> (speedPin_M2, HIGH);             <span class="pl-c">//no PWM Speed Control yet</span>
+ <span class="pl-c1">digitalWrite</span> (EN_M2, HIGH);             <span class="pl-c">//no PWM Speed Control yet</span>
  <span class="pl-c1">digitalWrite</span>(directionPin_M1A, HIGH);
  <span class="pl-c1">digitalWrite</span>(directionPin_M1B, LOW);  
- <span class="pl-c1">digitalWrite</span> (speedPin_M1, HIGH);             <span class="pl-c">//no PWM Speed Control yet</span>
+ <span class="pl-c1">digitalWrite</span> (EN_M1, HIGH);             <span class="pl-c">//no PWM Speed Control yet</span>
  <span class="pl-c1">digitalWrite</span>(directionPin_M2A, HIGH);
  <span class="pl-c1">digitalWrite</span>(directionPin_M2B, LOW);
  <span class="pl-c1">delay</span>(<span class="pl-c1">2000</span>);                                  <span class="pl-c">//WAITS FOR 2 SECONDS</span>
