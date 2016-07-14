@@ -330,6 +330,23 @@
 <a id="7-sensors" class="anchor" href="#7-sensors" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>7. Sensors</h2>
 
 <h3>
+<a id="70-analog-sensor-2-resistors" class="anchor" href="#70-analog-sensor-2-resistors" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>7.0 Analog Sensor: 2 resistors</h3>
+
+<div class="highlight highlight-source-c++"><pre><span class="pl-c">// the setup function runs once when you press reset or power the board</span>
+<span class="pl-k">void</span> <span class="pl-en">setup</span>() {
+  <span class="pl-c">// initialize digital pin 13 as an output.</span>
+  Serial.<span class="pl-c1">begin</span>(<span class="pl-c1">9600</span>);
+  <span class="pl-c1">pinMode</span>(<span class="pl-c1">13</span>, OUTPUT);
+}
+
+<span class="pl-c">// the loop function runs over and over again forever</span>
+<span class="pl-k">void</span> <span class="pl-en">loop</span>() {
+   <span class="pl-k">int</span> sensorValue = <span class="pl-c1">analogRead</span>(A0);
+   Serial.<span class="pl-c1">println</span>(sensorValue);
+   <span class="pl-c1">delay</span>(<span class="pl-c1">500</span>);
+}</pre></div>
+
+<h3>
 <a id="71-analog-sensors-light-detection" class="anchor" href="#71-analog-sensors-light-detection" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>7.1 Analog Sensors: Light Detection</h3>
 
 <p>Use this circuit:
