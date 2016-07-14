@@ -231,14 +231,14 @@
  <span class="pl-c1">digitalWrite</span>(directionPin_M1B, HIGH);
  <span class="pl-c1">digitalWrite</span> (EN_M1, HIGH);             <span class="pl-c">//no PWM Speed Control yet</span>
  <span class="pl-c1">digitalWrite</span>(directionPin_M2A, LOW);
- <span class="pl-c1">digitalWrite</span>(directionPin_M2B, HIGH);  
+ <span class="pl-c1">digitalWrite</span>(directionPin_M2B, HIGH);
  <span class="pl-c1">delay</span>(<span class="pl-c1">1000</span>);                                  <span class="pl-c">//WAITS FOR 1 SECOND</span>
  <span class="pl-c1">digitalWrite</span> (EN_M1, LOW);              <span class="pl-c">//stops the motors</span>
  <span class="pl-c1">digitalWrite</span> (EN_M2, LOW);              <span class="pl-c">//</span>
  <span class="pl-c1">delay</span>(<span class="pl-c1">1000</span>);                                  <span class="pl-c">//WAITS FOR 1 SECOND</span>
  <span class="pl-c1">digitalWrite</span> (EN_M2, HIGH);             <span class="pl-c">//no PWM Speed Control yet</span>
  <span class="pl-c1">digitalWrite</span>(directionPin_M1A, HIGH);
- <span class="pl-c1">digitalWrite</span>(directionPin_M1B, LOW);  
+ <span class="pl-c1">digitalWrite</span>(directionPin_M1B, LOW);
  <span class="pl-c1">digitalWrite</span> (EN_M1, HIGH);             <span class="pl-c">//no PWM Speed Control yet</span>
  <span class="pl-c1">digitalWrite</span>(directionPin_M2A, HIGH);
  <span class="pl-c1">digitalWrite</span>(directionPin_M2B, LOW);
@@ -332,6 +332,13 @@
 <h3>
 <a id="70-analog-sensor-2-resistors" class="anchor" href="#70-analog-sensor-2-resistors" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>7.0 Analog Sensor: 2 resistors</h3>
 
+<p>Use the Serial terminal from Arduino.</p>
+
+<p>Connect two resistors and read the input coming from:
+    - 5V
+    - GND
+    - the middle point from both resistors</p>
+
 <div class="highlight highlight-source-c++"><pre><span class="pl-c">// the setup function runs once when you press reset or power the board</span>
 <span class="pl-k">void</span> <span class="pl-en">setup</span>() {
   <span class="pl-c">// initialize digital pin 13 as an output.</span>
@@ -358,7 +365,71 @@
 <p>Your goal is to create a light sensing software.</p>
 
 <h3>
-<a id="721-digital-sensors-ultrasound---hardware" class="anchor" href="#721-digital-sensors-ultrasound---hardware" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>7.2.1 Digital Sensors: Ultrasound - Hardware</h3>
+<a id="72-if-conditional" class="anchor" href="#72-if-conditional" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>7.2 IF conditional</h3>
+
+<p>Use the reference to understand the IF sentence.</p>
+
+<p>(Reference)[<a href="https://www.arduino.cc/en/Reference/If">https://www.arduino.cc/en/Reference/If</a>]</p>
+
+<div class="highlight highlight-source-c++"><pre><span class="pl-k">if</span> (sensorValue &gt; <span class="pl-c1">350</span>)
+{
+  <span class="pl-c">// do something here like a tone or a turn a motor ON</span>
+}</pre></div>
+
+<h3>
+<a id="73-analog-sensors-light-navigation-with-two-light-sensors" class="anchor" href="#73-analog-sensors-light-navigation-with-two-light-sensors" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>7.3 Analog Sensors: Light Navigation with two light sensors</h3>
+
+<p>Use the following circuit:
+<img src="https://cloud.githubusercontent.com/assets/981310/16858464/94381772-4a59-11e6-99f0-bd6b9ab1e05c.png" alt="image"></p>
+
+<p>Try the following software:</p>
+
+<div class="highlight highlight-source-c++"><pre><span class="pl-k">int</span> EN_M1 = <span class="pl-c1">9</span>;     <span class="pl-c">//M1 Speed Control</span>
+<span class="pl-k">int</span> EN_M2 = <span class="pl-c1">3</span>;     <span class="pl-c">//M2 Speed Control</span>
+<span class="pl-k">int</span> directionPin_M1A = <span class="pl-c1">6</span>;     <span class="pl-c">//M1 Direction Control</span>
+<span class="pl-k">int</span> directionPin_M1B = <span class="pl-c1">7</span>;     <span class="pl-c">//M1 Direction Control</span>
+<span class="pl-k">int</span> directionPin_M2A = <span class="pl-c1">4</span>;     <span class="pl-c">//M1 Direction Control</span>
+<span class="pl-k">int</span> directionPin_M2B = <span class="pl-c1">5</span>;     <span class="pl-c">//M1 Direction Control</span>
+
+<span class="pl-k">void</span> <span class="pl-en">setup</span>() {                               <span class="pl-c">// Serial initialization</span>
+  <span class="pl-c1">pinMode</span>(directionPin_M1A, OUTPUT);
+  <span class="pl-c1">pinMode</span>(directionPin_M1B, OUTPUT);
+  <span class="pl-c1">pinMode</span>(directionPin_M2A, OUTPUT);
+  <span class="pl-c1">pinMode</span>(directionPin_M2B, OUTPUT);
+  <span class="pl-c1">pinMode</span>(EN_M1, OUTPUT);
+  <span class="pl-c1">pinMode</span>(EN_M2, OUTPUT);
+  <span class="pl-c1">digitalWrite</span> (EN_M1, LOW);              <span class="pl-c">//stops the motors</span>
+  <span class="pl-c1">digitalWrite</span> (EN_M2, LOW);
+  <span class="pl-c1">digitalWrite</span>(directionPin_M1A, LOW);
+  <span class="pl-c1">digitalWrite</span>(directionPin_M1B, HIGH);
+  <span class="pl-c1">digitalWrite</span>(directionPin_M2A, LOW);
+  <span class="pl-c1">digitalWrite</span>(directionPin_M2B, HIGH);
+}
+
+<span class="pl-k">void</span> <span class="pl-en">loop</span>() {
+  <span class="pl-c">//do nothing</span>
+  <span class="pl-k">int</span> sensorValue1 = <span class="pl-c1">analogRead</span>(A0);
+  <span class="pl-k">int</span> sensorValue2 = <span class="pl-c1">analogRead</span>(A1);
+
+  <span class="pl-k">if</span> (sensorValue1 &lt; <span class="pl-c1">450</span>) {
+    <span class="pl-c1">digitalWrite</span> (EN_M1, HIGH);             <span class="pl-c">//no PWM Speed Control yet</span>
+  }
+  <span class="pl-k">else</span>
+  {
+    <span class="pl-c1">digitalWrite</span> (EN_M1, LOW);             <span class="pl-c">//no PWM Speed Control yet</span>
+  }
+  <span class="pl-k">if</span> (sensorValue2 &lt; <span class="pl-c1">450</span>) {
+    <span class="pl-c1">digitalWrite</span> (EN_M2, HIGH);             <span class="pl-c">//no PWM Speed Control yet</span>
+  }
+  <span class="pl-k">else</span>
+  {
+    <span class="pl-c1">digitalWrite</span> (EN_M2, LOW);             <span class="pl-c">//no PWM Speed Control yet</span>
+  }
+  <span class="pl-c1">delay</span>(<span class="pl-c1">500</span>);                              <span class="pl-c">//fixes the update rate</span>
+}</pre></div>
+
+<h3>
+<a id="741-digital-sensors-ultrasound---hardware" class="anchor" href="#741-digital-sensors-ultrasound---hardware" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>7.4.1 Digital Sensors: Ultrasound - Hardware</h3>
 
 <p>As an example of a digital sensor, we have the ultrasonic module HC-SR04
 <a href="http://www.robotshop.com/media/files/PDF/datasheet-sen026.pdf">datasheet</a></p>
@@ -367,7 +438,7 @@
 <img src="https://cloud.githubusercontent.com/assets/981310/16713761/ed20dc4e-46e3-11e6-8337-91260704a771.png" alt="image"></p>
 
 <h3>
-<a id="722-digital-sensors-ultrasound---software" class="anchor" href="#722-digital-sensors-ultrasound---software" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>7.2.2 Digital Sensors: Ultrasound - Software</h3>
+<a id="742-digital-sensors-ultrasound---software" class="anchor" href="#742-digital-sensors-ultrasound---software" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>7.4.2 Digital Sensors: Ultrasound - Software</h3>
 
 <p>Given the following function, read the value in centimeters. :</p>
 
@@ -387,7 +458,71 @@
 <a id="8-software-basics-ii" class="anchor" href="#8-software-basics-ii" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>8. Software Basics II</h2>
 
 <h3>
-<a id="63-control-structures-if" class="anchor" href="#63-control-structures-if" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>6.3 Control Structures: if</h3>
+<a id="81-automatic-behaviors-navigation" class="anchor" href="#81-automatic-behaviors-navigation" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>8.1 Automatic Behaviors: Navigation</h3>
+
+<div class="highlight highlight-source-c++"><pre><span class="pl-k">int</span> EN_M1 = <span class="pl-c1">9</span>;     <span class="pl-c">//M1 Speed Control</span>
+<span class="pl-k">int</span> EN_M2 = <span class="pl-c1">3</span>;     <span class="pl-c">//M2 Speed Control</span>
+<span class="pl-k">int</span> directionPin_M1A = <span class="pl-c1">6</span>;     <span class="pl-c">//M1 Direction Control</span>
+<span class="pl-k">int</span> directionPin_M1B = <span class="pl-c1">7</span>;     <span class="pl-c">//M1 Direction Control</span>
+<span class="pl-k">int</span> directionPin_M2A = <span class="pl-c1">4</span>;     <span class="pl-c">//M1 Direction Control</span>
+<span class="pl-k">int</span> directionPin_M2B = <span class="pl-c1">5</span>;     <span class="pl-c">//M1 Direction Control</span>
+
+<span class="pl-k">int</span> trigPin = <span class="pl-c1">11</span>;
+<span class="pl-k">int</span> echoPin = <span class="pl-c1">12</span>;
+
+<span class="pl-k">int</span> <span class="pl-en">ultraSound</span>( <span class="pl-k">void</span> ) {
+  <span class="pl-k">long</span> duration;
+  <span class="pl-c1">digitalWrite</span>(trigPin, LOW);  <span class="pl-c">// Added this line</span>
+  <span class="pl-c1">delayMicroseconds</span>(<span class="pl-c1">2</span>); <span class="pl-c">// Added this line</span>
+  <span class="pl-c1">digitalWrite</span>(trigPin, HIGH);
+  <span class="pl-c1">delayMicroseconds</span>(<span class="pl-c1">10</span>); <span class="pl-c">// Added this line</span>
+  <span class="pl-c1">digitalWrite</span>(trigPin, LOW);
+  duration = <span class="pl-c1">pulseIn</span>(echoPin, HIGH);
+  <span class="pl-k">long</span> distance = (duration / <span class="pl-c1">2</span>) / <span class="pl-c1">29.1</span>;
+  <span class="pl-k">return</span> (<span class="pl-k">int</span>)distance;
+}
+
+<span class="pl-k">void</span> <span class="pl-en">setup</span>() {                               <span class="pl-c">// Serial initialization</span>
+  <span class="pl-c1">pinMode</span>(directionPin_M1A, OUTPUT);
+  <span class="pl-c1">pinMode</span>(directionPin_M1B, OUTPUT);
+  <span class="pl-c1">pinMode</span>(directionPin_M2A, OUTPUT);
+  <span class="pl-c1">pinMode</span>(directionPin_M2B, OUTPUT);
+  <span class="pl-c1">pinMode</span>(EN_M1, OUTPUT);
+  <span class="pl-c1">pinMode</span>(EN_M2, OUTPUT);
+  <span class="pl-c1">digitalWrite</span> (EN_M1, LOW);              <span class="pl-c">//stops the motors</span>
+  <span class="pl-c1">digitalWrite</span> (EN_M2, LOW);
+  <span class="pl-c1">digitalWrite</span>(directionPin_M1A, LOW);
+  <span class="pl-c1">digitalWrite</span>(directionPin_M1B, HIGH);
+  <span class="pl-c1">digitalWrite</span>(directionPin_M2A, LOW);
+  <span class="pl-c1">digitalWrite</span>(directionPin_M2B, HIGH);
+}
+
+<span class="pl-k">void</span> <span class="pl-en">loop</span>() {
+  <span class="pl-c">//do nothing</span>
+  <span class="pl-k">int</span> sensorValue1 = <span class="pl-c1">analogRead</span>(A0);
+  <span class="pl-k">int</span> sensorValue2 = <span class="pl-c1">analogRead</span>(A1);
+  <span class="pl-k">int</span> distance = <span class="pl-c1">ultraSound</span>();
+
+  <span class="pl-k">if</span> (distance &lt; <span class="pl-c1">30</span>) {    <span class="pl-c">//moves</span>
+    <span class="pl-c1">analogWrite</span> (EN_M1, <span class="pl-c1">100</span>);             <span class="pl-c">//no PWM Speed Control yet</span>
+    <span class="pl-c1">analogWrite</span> (EN_M2, <span class="pl-c1">100</span>);             <span class="pl-c">//no PWM Speed Control yet</span>
+  }
+  <span class="pl-k">else</span> <span class="pl-k">if</span> (distance &lt; <span class="pl-c1">10</span>) {  <span class="pl-c">//slows down</span>
+    <span class="pl-c1">analogWrite</span> (EN_M1, <span class="pl-c1">100</span>);             <span class="pl-c">//no PWM Speed Control yet</span>
+    <span class="pl-c1">analogWrite</span> (EN_M2, <span class="pl-c1">100</span>);             <span class="pl-c">//no PWM Speed Control yet</span>
+  }
+  <span class="pl-k">else</span> <span class="pl-k">if</span> (distance &lt; <span class="pl-c1">5</span>) {  <span class="pl-c">//turns</span>
+    <span class="pl-c1">analogWrite</span> (EN_M1, <span class="pl-c1">200</span>);             <span class="pl-c">//no PWM Speed Control yet</span>
+    <span class="pl-c1">analogWrite</span> (EN_M2, <span class="pl-c1">0</span>);             <span class="pl-c">//no PWM Speed Control yet</span>
+    <span class="pl-c1">delay</span>(<span class="pl-c1">random</span>(<span class="pl-c1">200</span>, <span class="pl-c1">1000</span>));
+  }
+  <span class="pl-k">else</span> {
+    <span class="pl-c1">analogWrite</span> (EN_M1, <span class="pl-c1">0</span>);             <span class="pl-c">//no PWM Speed Control yet</span>
+    <span class="pl-c1">analogWrite</span> (EN_M2, <span class="pl-c1">0</span>);             <span class="pl-c">//no PWM Speed Control yet</span>
+  }
+  <span class="pl-c1">delay</span>(<span class="pl-c1">50</span>);                                  <span class="pl-c">//WAITS FOR 2 SECONDS</span>
+}
+</pre></div>
 
 <h3>
 <a id="63-control-structures-switch-case" class="anchor" href="#63-control-structures-switch-case" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>6.3 Control Structures: Switch case</h3>
