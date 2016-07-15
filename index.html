@@ -442,7 +442,40 @@
 
 <p>Given the following function, read the value in centimeters. :</p>
 
-<div class="highlight highlight-source-c++"><pre><span class="pl-k">int</span> <span class="pl-en">ultraSound</span>( <span class="pl-k">void</span> ) {
+<div class="highlight highlight-source-c++"><pre><span class="pl-c">/*</span>
+<span class="pl-c">  Blink</span>
+<span class="pl-c">  Turns on an LED on for one second, then off for one second, repeatedly.</span>
+<span class="pl-c"></span>
+<span class="pl-c">  Most Arduinos have an on-board LED you can control. On the Uno and</span>
+<span class="pl-c">  Leonardo, it is attached to digital pin 13. If you're unsure what</span>
+<span class="pl-c">  pin the on-board LED is connected to on your Arduino model, check</span>
+<span class="pl-c">  the documentation at http://www.arduino.cc</span>
+<span class="pl-c"></span>
+<span class="pl-c">  This example code is in the public domain.</span>
+<span class="pl-c"></span>
+<span class="pl-c">  modified 8 May 2014</span>
+<span class="pl-c">  by Scott Fitzgerald</span>
+<span class="pl-c">*/</span>
+
+<span class="pl-k">int</span> trigPin = <span class="pl-c1">11</span>;
+<span class="pl-k">int</span> echoPin = <span class="pl-c1">12</span>;
+
+<span class="pl-c">// the setup function runs once when you press reset or power the board</span>
+<span class="pl-k">void</span> <span class="pl-en">setup</span>() {
+  <span class="pl-c">// initialize digital pin 13 as an output.</span>
+  Serial.<span class="pl-c1">begin</span>(<span class="pl-c1">9600</span>);
+  <span class="pl-c1">pinMode</span>(trigPin, OUTPUT);
+  <span class="pl-c1">pinMode</span>(echoPin, INPUT);
+}
+
+<span class="pl-c">// the loop function runs over and over again forever</span>
+<span class="pl-k">void</span> <span class="pl-en">loop</span>() {
+  <span class="pl-k">int</span> sensorValue = <span class="pl-c1">ultraSound</span>();
+  Serial.<span class="pl-c1">println</span>(sensorValue);
+  <span class="pl-c1">delay</span>(<span class="pl-c1">500</span>);
+}
+<span class="pl-c">//this is a function that gives back the distance</span>
+<span class="pl-k">int</span> <span class="pl-en">ultraSound</span>( <span class="pl-k">void</span> ) {
   <span class="pl-k">long</span> duration;
   <span class="pl-c1">digitalWrite</span>(trigPin, LOW);  <span class="pl-c">// Added this line</span>
   <span class="pl-c1">delayMicroseconds</span>(<span class="pl-c1">2</span>); <span class="pl-c">// Added this line</span>
