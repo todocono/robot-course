@@ -510,10 +510,14 @@
   <span class="pl-c1">pinMode</span>(EN_M2, OUTPUT);
   <span class="pl-c1">digitalWrite</span> (EN_M1, LOW);              <span class="pl-c">//stops the motors</span>
   <span class="pl-c1">digitalWrite</span> (EN_M2, LOW);
-  <span class="pl-c1">digitalWrite</span>(directionPin_M1A, LOW);
+  <span class="pl-c1">digitalWrite</span>(directionPin_M1A, LOW);  <span class="pl-c">//SETS DIRECTION FORWARD</span>
   <span class="pl-c1">digitalWrite</span>(directionPin_M1B, HIGH);
   <span class="pl-c1">digitalWrite</span>(directionPin_M2A, LOW);
   <span class="pl-c1">digitalWrite</span>(directionPin_M2B, HIGH);
+  Serial.<span class="pl-c1">begin</span>(<span class="pl-c1">9600</span>);
+  <span class="pl-c1">pinMode</span>(trigPin, OUTPUT);               <span class="pl-c">//INITIATES THE ULTRASOUND PINS</span>
+  <span class="pl-c1">pinMode</span>(echoPin, INPUT);
+
 }
 
 <span class="pl-k">void</span> <span class="pl-en">loop</span>() {
@@ -521,27 +525,46 @@
   <span class="pl-k">int</span> sensorValue1 = <span class="pl-c1">analogRead</span>(A0);
   <span class="pl-k">int</span> sensorValue2 = <span class="pl-c1">analogRead</span>(A1);
   <span class="pl-k">int</span> distance = <span class="pl-c1">ultraSound</span>();
+  Serial.<span class="pl-c1">println</span>(distance);
+  <span class="pl-k">if</span> (distance &gt; <span class="pl-c1">30</span>) {    <span class="pl-c">//moves</span>
+    <span class="pl-c1">analogWrite</span> (EN_M1, <span class="pl-c1">200</span>);             <span class="pl-c">//  Speed Control</span>
+    <span class="pl-c1">analogWrite</span> (EN_M2, <span class="pl-c1">200</span>);             <span class="pl-c">//  Speed Control</span>
+    Serial.<span class="pl-c1">println</span>(<span class="pl-s"><span class="pl-pds">"</span>going fast<span class="pl-pds">"</span></span>);
+  }
+  <span class="pl-k">else</span> <span class="pl-k">if</span> (distance &gt; <span class="pl-c1">10</span>) {  <span class="pl-c">//slows down</span>
+    <span class="pl-c1">analogWrite</span> (EN_M1, <span class="pl-c1">100</span>);             <span class="pl-c">//  Speed Control</span>
+    <span class="pl-c1">analogWrite</span> (EN_M2, <span class="pl-c1">100</span>);             <span class="pl-c">//  Speed Control</span>
+    Serial.<span class="pl-c1">println</span>(<span class="pl-s"><span class="pl-pds">"</span>going slow<span class="pl-pds">"</span></span>);
+  }
+  <span class="pl-k">else</span> <span class="pl-k">if</span> (distance &gt; <span class="pl-c1">5</span>) {  <span class="pl-c">//turns</span>
+    <span class="pl-c1">digitalWrite</span>(directionPin_M1A, HIGH);   <span class="pl-c">//SETS DIRECTION BACKWARDS</span>
+    <span class="pl-c1">digitalWrite</span>(directionPin_M1B, LOW);
+    <span class="pl-c1">digitalWrite</span>(directionPin_M2A, HIGH);
+    <span class="pl-c1">digitalWrite</span>(directionPin_M2B, LOW);
 
-  <span class="pl-k">if</span> (distance &lt; <span class="pl-c1">30</span>) {    <span class="pl-c">//moves</span>
-    <span class="pl-c1">analogWrite</span> (EN_M1, <span class="pl-c1">100</span>);             <span class="pl-c">//no PWM Speed Control yet</span>
-    <span class="pl-c1">analogWrite</span> (EN_M2, <span class="pl-c1">100</span>);             <span class="pl-c">//no PWM Speed Control yet</span>
-  }
-  <span class="pl-k">else</span> <span class="pl-k">if</span> (distance &lt; <span class="pl-c1">10</span>) {  <span class="pl-c">//slows down</span>
-    <span class="pl-c1">analogWrite</span> (EN_M1, <span class="pl-c1">100</span>);             <span class="pl-c">//no PWM Speed Control yet</span>
-    <span class="pl-c1">analogWrite</span> (EN_M2, <span class="pl-c1">100</span>);             <span class="pl-c">//no PWM Speed Control yet</span>
-  }
-  <span class="pl-k">else</span> <span class="pl-k">if</span> (distance &lt; <span class="pl-c1">5</span>) {  <span class="pl-c">//turns</span>
-    <span class="pl-c1">analogWrite</span> (EN_M1, <span class="pl-c1">200</span>);             <span class="pl-c">//no PWM Speed Control yet</span>
-    <span class="pl-c1">analogWrite</span> (EN_M2, <span class="pl-c1">0</span>);             <span class="pl-c">//no PWM Speed Control yet</span>
+    <span class="pl-c1">analogWrite</span> (EN_M1, <span class="pl-c1">200</span>);             <span class="pl-c">//  Speed Control</span>
+    <span class="pl-c1">analogWrite</span> (EN_M2, <span class="pl-c1">0</span>);             <span class="pl-c">//  Speed Control</span>
+
+    <span class="pl-c1">delay</span>(<span class="pl-c1">random</span>(<span class="pl-c1">200</span>, <span class="pl-c1">1000</span>));           <span class="pl-c">//ADDS A RANDOM VALUE</span>
+
+    <span class="pl-c1">digitalWrite</span>(directionPin_M1A, LOW); <span class="pl-c">//SETS DIRECTION FORWARD</span>
+    <span class="pl-c1">digitalWrite</span>(directionPin_M1B, HIGH);
+    <span class="pl-c1">digitalWrite</span>(directionPin_M2A, LOW);
+    <span class="pl-c1">digitalWrite</span>(directionPin_M2B, HIGH);
+
+    <span class="pl-c1">analogWrite</span> (EN_M1, <span class="pl-c1">200</span>);             <span class="pl-c">//  Speed Control</span>
+    <span class="pl-c1">analogWrite</span> (EN_M2, <span class="pl-c1">0</span>);             <span class="pl-c">//  Speed Control</span>
     <span class="pl-c1">delay</span>(<span class="pl-c1">random</span>(<span class="pl-c1">200</span>, <span class="pl-c1">1000</span>));
+
+    Serial.<span class="pl-c1">println</span>(<span class="pl-s"><span class="pl-pds">"</span>turning<span class="pl-pds">"</span></span>);
   }
   <span class="pl-k">else</span> {
-    <span class="pl-c1">analogWrite</span> (EN_M1, <span class="pl-c1">0</span>);             <span class="pl-c">//no PWM Speed Control yet</span>
-    <span class="pl-c1">analogWrite</span> (EN_M2, <span class="pl-c1">0</span>);             <span class="pl-c">//no PWM Speed Control yet</span>
+    <span class="pl-c1">analogWrite</span> (EN_M1, <span class="pl-c1">0</span>);             <span class="pl-c">//  Speed Control</span>
+    <span class="pl-c1">analogWrite</span> (EN_M2, <span class="pl-c1">0</span>);             <span class="pl-c">//  Speed Control</span>
+    Serial.<span class="pl-c1">println</span>(<span class="pl-s"><span class="pl-pds">"</span>gtopping<span class="pl-pds">"</span></span>);
   }
-  <span class="pl-c1">delay</span>(<span class="pl-c1">50</span>);                                  <span class="pl-c">//WAITS FOR 2 SECONDS</span>
-}
-</pre></div>
+  <span class="pl-c1">delay</span>(<span class="pl-c1">50</span>);                                  <span class="pl-c">//WAITA BIT TO AVOID OVERFLOW OF sERIAL</span>
+}</pre></div>
 
 <h3>
 <a id="63-control-structures-switch-case" class="anchor" href="#63-control-structures-switch-case" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>6.3 Control Structures: Switch case</h3>
