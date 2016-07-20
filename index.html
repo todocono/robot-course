@@ -46,10 +46,10 @@
 <li>Mechanics Basics</li>
 <li>Electronics Basics</li>
 <li>Maze Solving - Activity</li>
-<li>Software Basics</li>
-<li>Sensors</li>
-<li>Telecommunication</li>
-<li>Analog signals</li>
+<li>Software Basics I</li>
+<li>Software Basics II</li>
+<li>Analog Sensors</li>
+<li>Infrared (optional)</li>
 <li>Chain Reaction - Activity</li>
 <li>Learning Outcomes</li>
 <li>Authors &amp; Contributors</li>
@@ -70,15 +70,10 @@
 <p>Any activity would do it. Here is a suggestion of one that it is my favorite.</p>
 
 <pre><code>  1. Receive instructions.
-
   2. Team up, groups of at least 3 people.
-
   3. Gather the materials. (marshmallow, 20 spaghetti, 1m of tape, 1m of thread)
-
   4. Build for 18 minutes. The tallest tower that stands for 1 minute wins.
-
   5. Watch the video https://www.youtube.com/watch?v=1p5sBzMtB3Q
-
   6. Answer:
     -  how many people did he test?
     -  where did he test it?
@@ -143,14 +138,47 @@
 
 <p><img src="https://cloud.githubusercontent.com/assets/981310/16712931/30da32e8-46c9-11e6-9fc9-28f0140eec92.png" alt="image"></p>
 
+<div class="highlight highlight-source-c++"><pre>#<span class="pl-k">define</span> <span class="pl-en">NOTE_C4</span>  <span class="pl-c1">262</span>
+#<span class="pl-k">define</span> <span class="pl-en">NOTE_D4</span>  <span class="pl-c1">294</span>
+#<span class="pl-k">define</span> <span class="pl-en">NOTE_E4</span>  <span class="pl-c1">330</span>
+#<span class="pl-k">define</span> <span class="pl-en">NOTE_F4</span>  <span class="pl-c1">349</span>
+#<span class="pl-k">define</span> <span class="pl-en">NOTE_G4</span>  <span class="pl-c1">392</span>
+#<span class="pl-k">define</span> <span class="pl-en">NOTE_A4</span>  <span class="pl-c1">440</span>
+#<span class="pl-k">define</span> <span class="pl-en">NOTE_B4</span>  <span class="pl-c1">494</span>
+#<span class="pl-k">define</span> <span class="pl-en">NOTE_C5</span>  <span class="pl-c1">523</span>
+#<span class="pl-k">define</span> <span class="pl-en">NOTE_D5</span>  <span class="pl-c1">587</span>
+
+<span class="pl-k">void</span> <span class="pl-en">setup</span>() {
+    <span class="pl-c1">tone</span>(<span class="pl-c1">8</span>, NOTE_C4, <span class="pl-c1">300</span>);
+    <span class="pl-c1">delay</span>(<span class="pl-c1">200</span>);
+    <span class="pl-c1">tone</span>(<span class="pl-c1">8</span>, NOTE_C5, <span class="pl-c1">500</span>);
+    <span class="pl-c1">delay</span>(<span class="pl-c1">200</span>);
+    <span class="pl-c1">tone</span>(<span class="pl-c1">8</span>, NOTE_C4, <span class="pl-c1">300</span>);
+    <span class="pl-c1">delay</span>(<span class="pl-c1">200</span>);
+    <span class="pl-c1">noTone</span>(<span class="pl-c1">8</span>);
+  }
+}
+
+<span class="pl-k">void</span> <span class="pl-en">loop</span>() {
+  <span class="pl-c">// no need to repeat the melody.</span>
+}</pre></div>
+
 <h3>
 <a id="25-control-structures-while--for" class="anchor" href="#25-control-structures-while--for" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>2.5 Control Structures: while &amp; for</h3>
 
-<p>Use the following information:
-<a href="https://www.arduino.cc/en/Reference/For">https://www.arduino.cc/en/Reference/For</a>
+<p>Use the following information:</p>
+
+<p><a href="https://www.arduino.cc/en/Reference/For">https://www.arduino.cc/en/Reference/For</a>
 <a href="https://www.arduino.cc/en/Reference/while">https://www.arduino.cc/en/Reference/while</a></p>
 
-<p>Build a software that plays a melody at each corner of a square.</p>
+<p>Answer:</p>
+
+<ul>
+<li>what is the difference between <code>setup()</code> and <code>loop()</code> ?</li>
+<li>what happens if the buzzer instructions go to <code>loop()</code> ?</li>
+<li>how to use  <code>for()</code> inside of the <code>setup()</code>?</li>
+<li>how to use  <code>for()</code> inside of the <code>loop()</code>?</li>
+</ul>
 
 <h3>
 <a id="26-serial-communication" class="anchor" href="#26-serial-communication" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>2.6 Serial Communication</h3>
@@ -166,10 +194,15 @@
 <a id="27-control-structures-variables" class="anchor" href="#27-control-structures-variables" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>2.7 Control Structures: variables</h3>
 
 <p>Use the following information:
-<a href="https://www.arduino.cc/en/Reference/For">https://www.arduino.cc/en/Reference/For</a>
-<a href="https://www.arduino.cc/en/Reference/while">https://www.arduino.cc/en/Reference/while</a></p>
+<a href="https://www.arduino.cc/en/Reference/VariableDeclaration">https://www.arduino.cc/en/Reference/VariableDeclaration</a></p>
 
-<p>Build a software that plays a melody at each corner of a square.</p>
+<p>And answer:</p>
+
+<ul>
+<li>how to declare a variable ?</li>
+<li>how to use the variable that drives <code>for()</code> ?</li>
+<li>can we also use <code>while()</code> for the same ?</li>
+</ul>
 
 <h2>
 <a id="3-mechanics-basics" class="anchor" href="#3-mechanics-basics" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>3. Mechanics Basics</h2>
@@ -343,110 +376,8 @@
 <li>Why is called the "Darpa Challenge"?</li>
 </ul>
 
-<h2>
-<a id="7-sensors" class="anchor" href="#7-sensors" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>7. Sensors</h2>
-
 <h3>
-<a id="70-analog-sensor-2-resistors" class="anchor" href="#70-analog-sensor-2-resistors" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>7.0 Analog Sensor: 2 resistors</h3>
-
-<p>Use the Serial terminal from Arduino.</p>
-
-<p>Connect two resistors and read the input coming from:
-    - 5V
-    - GND
-    - the middle point from both resistors</p>
-
-<div class="highlight highlight-source-c++"><pre><span class="pl-c">// the setup function runs once when you press reset or power the board</span>
-<span class="pl-k">void</span> <span class="pl-en">setup</span>() {
-  <span class="pl-c">// initialize digital pin 13 as an output.</span>
-  Serial.<span class="pl-c1">begin</span>(<span class="pl-c1">9600</span>);
-  <span class="pl-c1">pinMode</span>(<span class="pl-c1">13</span>, OUTPUT);
-}
-
-<span class="pl-c">// the loop function runs over and over again forever</span>
-<span class="pl-k">void</span> <span class="pl-en">loop</span>() {
-   <span class="pl-k">int</span> sensorValue = <span class="pl-c1">analogRead</span>(A0);
-   Serial.<span class="pl-c1">println</span>(sensorValue);
-   <span class="pl-c1">delay</span>(<span class="pl-c1">500</span>);
-}</pre></div>
-
-<h3>
-<a id="71-analog-sensors-light-detection" class="anchor" href="#71-analog-sensors-light-detection" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>7.1 Analog Sensors: Light Detection</h3>
-
-<p>Use this circuit:
-<img src="https://cloud.githubusercontent.com/assets/981310/16713846/08642324-46e6-11e6-94fb-d65f544d99f6.png" alt="image"></p>
-
-<p>With this software:
-<a href="https://www.arduino.cc/en/Tutorial/AnalogInput">https://www.arduino.cc/en/Tutorial/AnalogInput</a></p>
-
-<p>Your goal is to create a light sensing software.</p>
-
-<h3>
-<a id="72-if-conditional" class="anchor" href="#72-if-conditional" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>7.2 IF conditional</h3>
-
-<p>Use the reference to understand the IF sentence.</p>
-
-<p>(Reference)[<a href="https://www.arduino.cc/en/Reference/If">https://www.arduino.cc/en/Reference/If</a>]</p>
-
-<div class="highlight highlight-source-c++"><pre><span class="pl-k">if</span> (sensorValue &gt; <span class="pl-c1">350</span>)
-{
-  <span class="pl-c">// do something here like a tone or a turn a motor ON</span>
-}</pre></div>
-
-<h3>
-<a id="73-analog-sensors-light-navigation-with-two-light-sensors" class="anchor" href="#73-analog-sensors-light-navigation-with-two-light-sensors" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>7.3 Analog Sensors: Light Navigation with two light sensors</h3>
-
-<p>Use the following circuit:
-<img src="https://cloud.githubusercontent.com/assets/981310/16858464/94381772-4a59-11e6-99f0-bd6b9ab1e05c.png" alt="image"></p>
-
-<p>Try the following software:</p>
-
-<div class="highlight highlight-source-c++"><pre><span class="pl-k">int</span> EN_M1 = <span class="pl-c1">9</span>;     <span class="pl-c">//M1 Speed Control</span>
-<span class="pl-k">int</span> EN_M2 = <span class="pl-c1">3</span>;     <span class="pl-c">//M2 Speed Control</span>
-<span class="pl-k">int</span> directionPin_M1A = <span class="pl-c1">6</span>;     <span class="pl-c">//M1 Direction Control</span>
-<span class="pl-k">int</span> directionPin_M1B = <span class="pl-c1">7</span>;     <span class="pl-c">//M1 Direction Control</span>
-<span class="pl-k">int</span> directionPin_M2A = <span class="pl-c1">4</span>;     <span class="pl-c">//M1 Direction Control</span>
-<span class="pl-k">int</span> directionPin_M2B = <span class="pl-c1">5</span>;     <span class="pl-c">//M1 Direction Control</span>
-
-<span class="pl-k">void</span> <span class="pl-en">setup</span>() {                               <span class="pl-c">// Serial initialization</span>
-  <span class="pl-c1">pinMode</span>(directionPin_M1A, OUTPUT);
-  <span class="pl-c1">pinMode</span>(directionPin_M1B, OUTPUT);
-  <span class="pl-c1">pinMode</span>(directionPin_M2A, OUTPUT);
-  <span class="pl-c1">pinMode</span>(directionPin_M2B, OUTPUT);
-  <span class="pl-c1">pinMode</span>(EN_M1, OUTPUT);
-  <span class="pl-c1">pinMode</span>(EN_M2, OUTPUT);
-  <span class="pl-c1">digitalWrite</span> (EN_M1, LOW);              <span class="pl-c">//stops the motors</span>
-  <span class="pl-c1">digitalWrite</span> (EN_M2, LOW);
-  <span class="pl-c1">digitalWrite</span>(directionPin_M1A, LOW);
-  <span class="pl-c1">digitalWrite</span>(directionPin_M1B, HIGH);
-  <span class="pl-c1">digitalWrite</span>(directionPin_M2A, LOW);
-  <span class="pl-c1">digitalWrite</span>(directionPin_M2B, HIGH);
-}
-
-<span class="pl-k">void</span> <span class="pl-en">loop</span>() {
-  <span class="pl-c">//do nothing</span>
-  <span class="pl-k">int</span> sensorValue1 = <span class="pl-c1">analogRead</span>(A0);
-  <span class="pl-k">int</span> sensorValue2 = <span class="pl-c1">analogRead</span>(A1);
-
-  <span class="pl-k">if</span> (sensorValue1 &lt; <span class="pl-c1">450</span>) {
-    <span class="pl-c1">digitalWrite</span> (EN_M1, HIGH);             <span class="pl-c">//no PWM Speed Control yet</span>
-  }
-  <span class="pl-k">else</span>
-  {
-    <span class="pl-c1">digitalWrite</span> (EN_M1, LOW);             <span class="pl-c">//no PWM Speed Control yet</span>
-  }
-  <span class="pl-k">if</span> (sensorValue2 &lt; <span class="pl-c1">450</span>) {
-    <span class="pl-c1">digitalWrite</span> (EN_M2, HIGH);             <span class="pl-c">//no PWM Speed Control yet</span>
-  }
-  <span class="pl-k">else</span>
-  {
-    <span class="pl-c1">digitalWrite</span> (EN_M2, LOW);             <span class="pl-c">//no PWM Speed Control yet</span>
-  }
-  <span class="pl-c1">delay</span>(<span class="pl-c1">500</span>);                              <span class="pl-c">//fixes the update rate</span>
-}</pre></div>
-
-<h3>
-<a id="741-digital-sensors-ultrasound---hardware" class="anchor" href="#741-digital-sensors-ultrasound---hardware" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>7.4.1 Digital Sensors: Ultrasound - Hardware</h3>
+<a id="62-digital-sensors-ultrasound---hardware" class="anchor" href="#62-digital-sensors-ultrasound---hardware" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>6.2 Digital Sensors: Ultrasound - Hardware</h3>
 
 <p>As an example of a digital sensor, we have the ultrasonic module HC-SR04
 <a href="http://www.robotshop.com/media/files/PDF/datasheet-sen026.pdf">datasheet</a></p>
@@ -455,14 +386,12 @@
 <img src="https://cloud.githubusercontent.com/assets/981310/16713761/ed20dc4e-46e3-11e6-8337-91260704a771.png" alt="image"></p>
 
 <h3>
-<a id="742-digital-sensors-ultrasound---software" class="anchor" href="#742-digital-sensors-ultrasound---software" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>7.4.2 Digital Sensors: Ultrasound - Software</h3>
+<a id="63-digital-sensors-ultrasound---software" class="anchor" href="#63-digital-sensors-ultrasound---software" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>6.3 Digital Sensors: Ultrasound - Software</h3>
 
 <p>Given the following function, read the value in centimeters. :</p>
 
-<div class="highlight highlight-source-c++"><pre>
-<span class="pl-k">int</span> trigPin = <span class="pl-c1">11</span>;
+<div class="highlight highlight-source-c++"><pre><span class="pl-k">int</span> trigPin = <span class="pl-c1">11</span>;
 <span class="pl-k">int</span> echoPin = <span class="pl-c1">12</span>;
-
 <span class="pl-c">// the setup function runs once when you press reset or power the board</span>
 <span class="pl-k">void</span> <span class="pl-en">setup</span>() {
   <span class="pl-c">// initialize digital pin 13 as an output.</span>
@@ -470,7 +399,6 @@
   <span class="pl-c1">pinMode</span>(trigPin, OUTPUT);
   <span class="pl-c1">pinMode</span>(echoPin, INPUT);
 }
-
 <span class="pl-c">// the loop function runs over and over again forever</span>
 <span class="pl-k">void</span> <span class="pl-en">loop</span>() {
   <span class="pl-k">int</span> sensorValue = <span class="pl-c1">ultraSound</span>();
@@ -491,10 +419,22 @@
 }</pre></div>
 
 <h2>
-<a id="8-software-basics-ii" class="anchor" href="#8-software-basics-ii" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>8. Software Basics II</h2>
+<a id="7-software-basics-ii" class="anchor" href="#7-software-basics-ii" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>7. Software Basics II</h2>
 
 <h3>
-<a id="81-automatic-behaviors-navigation" class="anchor" href="#81-automatic-behaviors-navigation" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>8.1 Automatic Behaviors: Navigation</h3>
+<a id="71-if-conditional" class="anchor" href="#71-if-conditional" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>7.1 IF conditional</h3>
+
+<p>Use the reference to understand the IF sentence.</p>
+
+<p>(Reference)[<a href="https://www.arduino.cc/en/Reference/If">https://www.arduino.cc/en/Reference/If</a>]</p>
+
+<div class="highlight highlight-source-c++"><pre><span class="pl-k">if</span> (sensorValue &gt; <span class="pl-c1">350</span>)
+{
+  <span class="pl-c">// do something here like a tone or a turn a motor ON</span>
+}</pre></div>
+
+<h3>
+<a id="72-automatic-behaviors-navigation" class="anchor" href="#72-automatic-behaviors-navigation" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>7.2 Automatic Behaviors: Navigation</h3>
 
 <div class="highlight highlight-source-c++"><pre><span class="pl-k">int</span> EN_M1 = <span class="pl-c1">9</span>;     <span class="pl-c">//M1 Speed Control</span>
 <span class="pl-k">int</span> EN_M2 = <span class="pl-c1">3</span>;     <span class="pl-c">//M2 Speed Control</span>
@@ -578,24 +518,118 @@
   <span class="pl-k">else</span> {
     <span class="pl-c1">analogWrite</span> (EN_M1, <span class="pl-c1">0</span>);             <span class="pl-c">//  Speed Control</span>
     <span class="pl-c1">analogWrite</span> (EN_M2, <span class="pl-c1">0</span>);             <span class="pl-c">//  Speed Control</span>
-    Serial.<span class="pl-c1">println</span>(<span class="pl-s"><span class="pl-pds">"</span>gtopping<span class="pl-pds">"</span></span>);
+    Serial.<span class="pl-c1">println</span>(<span class="pl-s"><span class="pl-pds">"</span>stopping<span class="pl-pds">"</span></span>);
   }
-  <span class="pl-c1">delay</span>(<span class="pl-c1">50</span>);                                  <span class="pl-c">//WAITA BIT TO AVOID OVERFLOW OF sERIAL</span>
+  <span class="pl-c1">delay</span>(<span class="pl-c1">50</span>);                                  <span class="pl-c">//WAIT A BIT TO AVOID OVERFLOW OF SERIAL</span>
+}</pre></div>
+
+<h2>
+<a id="8-analog-sensors" class="anchor" href="#8-analog-sensors" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>8. Analog Sensors</h2>
+
+<h3>
+<a id="81-analog-sensor-2-resistors" class="anchor" href="#81-analog-sensor-2-resistors" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>8.1 Analog Sensor: 2 resistors</h3>
+
+<p>Use the Serial terminal from Arduino.</p>
+
+<p>Connect two resistors and read the input coming from:
+    - 5V
+    - GND
+    - the middle point from both resistors</p>
+
+<div class="highlight highlight-source-c++"><pre><span class="pl-c">// the setup function runs once when you press reset or power the board</span>
+<span class="pl-k">void</span> <span class="pl-en">setup</span>() {
+  <span class="pl-c">// initialize digital pin 13 as an output.</span>
+  Serial.<span class="pl-c1">begin</span>(<span class="pl-c1">9600</span>);
+  <span class="pl-c1">pinMode</span>(<span class="pl-c1">13</span>, OUTPUT);
+}
+
+<span class="pl-c">// the loop function runs over and over again forever</span>
+<span class="pl-k">void</span> <span class="pl-en">loop</span>() {
+   <span class="pl-k">int</span> sensorValue = <span class="pl-c1">analogRead</span>(A0);
+   Serial.<span class="pl-c1">println</span>(sensorValue);
+   <span class="pl-c1">delay</span>(<span class="pl-c1">500</span>);
 }</pre></div>
 
 <h3>
-<a id="63-control-structures-switch-case" class="anchor" href="#63-control-structures-switch-case" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>6.3 Control Structures: Switch case</h3>
+<a id="82-analog-sensors-light-detection" class="anchor" href="#82-analog-sensors-light-detection" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>8.2 Analog Sensors: Light Detection</h3>
+
+<p>Use this circuit:
+<img src="https://cloud.githubusercontent.com/assets/981310/16713846/08642324-46e6-11e6-94fb-d65f544d99f6.png" alt="image"></p>
+
+<p>With this software:
+<a href="https://www.arduino.cc/en/Tutorial/AnalogInput">https://www.arduino.cc/en/Tutorial/AnalogInput</a></p>
+
+<p>Your goal is to create a light sensing software.</p>
 
 <h3>
-<a id="82-wifi" class="anchor" href="#82-wifi" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>8.2 Wifi</h3>
+<a id="83-automatic-behavior-light-navigation-with-two-light-sensors" class="anchor" href="#83-automatic-behavior-light-navigation-with-two-light-sensors" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>8.3 Automatic Behavior: Light Navigation with two light sensors</h3>
+
+<p>Use the following circuit:
+<img src="https://cloud.githubusercontent.com/assets/981310/16858464/94381772-4a59-11e6-99f0-bd6b9ab1e05c.png" alt="image"></p>
+
+<p>Try the following software:</p>
+
+<div class="highlight highlight-source-c++"><pre><span class="pl-k">int</span> EN_M1 = <span class="pl-c1">9</span>;     <span class="pl-c">//M1 Speed Control</span>
+<span class="pl-k">int</span> EN_M2 = <span class="pl-c1">3</span>;     <span class="pl-c">//M2 Speed Control</span>
+<span class="pl-k">int</span> directionPin_M1A = <span class="pl-c1">6</span>;     <span class="pl-c">//M1 Direction Control</span>
+<span class="pl-k">int</span> directionPin_M1B = <span class="pl-c1">7</span>;     <span class="pl-c">//M1 Direction Control</span>
+<span class="pl-k">int</span> directionPin_M2A = <span class="pl-c1">4</span>;     <span class="pl-c">//M1 Direction Control</span>
+<span class="pl-k">int</span> directionPin_M2B = <span class="pl-c1">5</span>;     <span class="pl-c">//M1 Direction Control</span>
+
+<span class="pl-k">void</span> <span class="pl-en">setup</span>() {                               <span class="pl-c">// Serial initialization</span>
+  <span class="pl-c1">pinMode</span>(directionPin_M1A, OUTPUT);
+  <span class="pl-c1">pinMode</span>(directionPin_M1B, OUTPUT);
+  <span class="pl-c1">pinMode</span>(directionPin_M2A, OUTPUT);
+  <span class="pl-c1">pinMode</span>(directionPin_M2B, OUTPUT);
+  <span class="pl-c1">pinMode</span>(EN_M1, OUTPUT);
+  <span class="pl-c1">pinMode</span>(EN_M2, OUTPUT);
+  <span class="pl-c1">digitalWrite</span> (EN_M1, LOW);              <span class="pl-c">//stops the motors</span>
+  <span class="pl-c1">digitalWrite</span> (EN_M2, LOW);
+  <span class="pl-c1">digitalWrite</span>(directionPin_M1A, LOW);
+  <span class="pl-c1">digitalWrite</span>(directionPin_M1B, HIGH);
+  <span class="pl-c1">digitalWrite</span>(directionPin_M2A, LOW);
+  <span class="pl-c1">digitalWrite</span>(directionPin_M2B, HIGH);
+}
+
+<span class="pl-k">void</span> <span class="pl-en">loop</span>() {
+  <span class="pl-c">//do nothing</span>
+  <span class="pl-k">int</span> sensorValue1 = <span class="pl-c1">analogRead</span>(A0);
+  <span class="pl-k">int</span> sensorValue2 = <span class="pl-c1">analogRead</span>(A1);
+
+  <span class="pl-k">if</span> (sensorValue1 &lt; <span class="pl-c1">450</span>) {
+    <span class="pl-c1">digitalWrite</span> (EN_M1, HIGH);             <span class="pl-c">//no PWM Speed Control yet</span>
+  }
+  <span class="pl-k">else</span>
+  {
+    <span class="pl-c1">digitalWrite</span> (EN_M1, LOW);             <span class="pl-c">//no PWM Speed Control yet</span>
+  }
+  <span class="pl-k">if</span> (sensorValue2 &lt; <span class="pl-c1">450</span>) {
+    <span class="pl-c1">digitalWrite</span> (EN_M2, HIGH);             <span class="pl-c">//no PWM Speed Control yet</span>
+  }
+  <span class="pl-k">else</span>
+  {
+    <span class="pl-c1">digitalWrite</span> (EN_M2, LOW);             <span class="pl-c">//no PWM Speed Control yet</span>
+  }
+  <span class="pl-c1">delay</span>(<span class="pl-c1">500</span>);                              <span class="pl-c">//fixes the update rate</span>
+}</pre></div>
+
+<h2>
+<a id="9-infrared-optional" class="anchor" href="#9-infrared-optional" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>9 Infrared (optional)</h2>
 
 <h3>
-<a id="83-infrared-signals" class="anchor" href="#83-infrared-signals" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>8.3 Infrared signals</h3>
+<a id="91-software-libraries" class="anchor" href="#91-software-libraries" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>9.1 Software Libraries</h3>
+
+<p>Library IRremote installation</p>
+
+<h3>
+<a id="91-hardware" class="anchor" href="#91-hardware" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>9.1 Hardware</h3>
 
 <p><img src="https://cloud.githubusercontent.com/assets/981310/16713730/5fa7f4ba-46e3-11e6-866e-ad6c14f96c6d.png" alt="image"></p>
 
-<h2>
-<a id="9-analog-signals" class="anchor" href="#9-analog-signals" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>9. Analog signals</h2>
+<h3>
+<a id="91-software" class="anchor" href="#91-software" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>9.1 Software</h3>
+
+<div class="highlight highlight-source-c++"><pre><span class="pl-c">//code example goes here</span></pre></div>
 
 <h2>
 <a id="10-chain-reaction---activity" class="anchor" href="#10-chain-reaction---activity" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>10. Chain Reaction - Activity</h2>
